@@ -1,4 +1,5 @@
 var position = 0
+var totalDieRolls = 0
 
 class Utility {
 
@@ -21,6 +22,10 @@ class Utility {
 
         if(position > 100)
             position-=dieValue
+
+        totalDieRolls++
+
+        console.log("Current position of player is "+position)
     }
 
     //function to simulate the complete game
@@ -29,6 +34,8 @@ class Utility {
         while(position!=100)
             this.playGame()
 
+        console.log("Total number of die rolls is "+totalDieRolls)
+        
     }
 
 }
