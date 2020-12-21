@@ -1,0 +1,1 @@
+console.log("Welcome to snakes and ladders!!")
