@@ -5,7 +5,6 @@ class Utility {
     //function to play the game
     playGame() {
 
-
         var dieValue = Math.floor(Math.random() * 10 % 6) + 1;
         var moveOption = Math.floor(Math.random() * 10 % 3);
 
