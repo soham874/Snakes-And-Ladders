@@ -17,6 +17,19 @@ class Utility {
                 position+=dieValue
         }
 
+        if(position < 0)
+            position = 0
+
+        if(position > 100)
+            position-=dieValue
+    }
+
+    //function to simulate the complete game
+    simulateGame(){
+
+        while(position!=100)
+            this.playGame()
+
     }
 
 }
