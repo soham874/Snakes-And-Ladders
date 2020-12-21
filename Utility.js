@@ -1,9 +1,12 @@
-class Utility{
+var position = 0
+
+class Utility {
 
     //function to play the game
-    playGame(){
+    playGame() {
 
-        var position = 0
+
+        var dieValue = Math.floor(Math.random() * 10 % 6) + 1;
 
     }
 
