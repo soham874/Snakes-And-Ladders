@@ -7,6 +7,15 @@ class Utility {
 
 
         var dieValue = Math.floor(Math.random() * 10 % 6) + 1;
+        var moveOption = Math.floor(Math.random() * 10 % 3);
+
+        switch(moveOption){
+            case 1:
+                position-=dieValue
+                break
+            case 2:
+                position+=dieValue
+        }
 
     }
 
