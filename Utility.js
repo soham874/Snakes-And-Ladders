@@ -1,15 +1,26 @@
 var position
 var totalDieRolls
 
+const NO_MOVE = 0
+const SNAKE = 1
+const LADDER = 2
+
 class Utility {
 
     //function to play the game
-    playGame() {
+    playGame = () => {
 
         var dieValue = Math.floor(Math.random() * 10 % 6) + 1;
         var moveOption = Math.floor(Math.random() * 10 % 3);
 
-        (moveOption == 1) ? position -= dieValue : position += dieValue
+        switch(moveOption){
+            case SNAKE:
+                position -= dieValue
+                break;
+            case LADDER:
+                position += dieValue
+            case NO_MOVE:
+        }
 
         if (position < 0)
             position = 0
@@ -20,7 +31,7 @@ class Utility {
     }
 
     //function to simulate the complete game
-    simulateGame() {
+    simulateGame = () => {
         totalDieRolls = 0
         position = 0
         while (position != 100) {
@@ -28,24 +39,21 @@ class Utility {
             totalDieRolls++
         }
 
-        console.log("Total number of die rolls is " + totalDieRolls)
+        console.log(`Total number of die rolls is ${totalDieRolls}`)
         return totalDieRolls
 
     }
 
     //play between 2 players
-    playBetweenTwoPlayers() {
+    playBetweenTwoPlayers = () => {
         console.log("For player 1 ==> ")
         let playerOneMoves = this.simulateGame()
 
         console.log("For player 2 ==> ")
         let playerTwoMoves = this.simulateGame()
 
-        if (playerOneMoves < playerTwoMoves)
-            var output = "Player 1"
-        else
-            var output = "Player 2"
-        console.log(output + " won the game!")
+        let winner = (playerOneMoves < playerTwoMoves) ? "Player 1" : "Player 2"
+        console.log(`${winner} won the game!`)
     }
 }
 
