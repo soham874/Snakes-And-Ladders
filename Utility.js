@@ -1,4 +1,5 @@
-var position = 0
+var position
+var totalDieRolls
 
 class Utility {
 
@@ -8,13 +9,7 @@ class Utility {
         var dieValue = Math.floor(Math.random() * 10 % 6) + 1;
         var moveOption = Math.floor(Math.random() * 10 % 3);
 
-        switch (moveOption) {
-            case 1:
-                position -= dieValue
-                break
-            case 2:
-                position += dieValue
-        }
+        (moveOption == 1) ? position -= dieValue : position += dieValue
 
         if (position < 0)
             position = 0
@@ -26,7 +21,7 @@ class Utility {
 
     //function to simulate the complete game
     simulateGame() {
-        var totalDieRolls = 0
+        totalDieRolls = 0
         position = 0
         while (position != 100) {
             this.playGame()
